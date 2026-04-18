@@ -4795,14 +4795,11 @@ self.addEventListener('notificationclick', e => {
 `;
 
   try {
-    const blob = new Blob([swCode], { type: 'application/javascript' });
-    const swBlobUrl = URL.createObjectURL(blob);
-
-    swReg = await navigator.serviceWorker.register(swBlobUrl, {
-      scope: location.pathname.replace(/[^/]*$/, '') || '/',
+    swReg = await navigator.serviceWorker.register('./sw.js', {
+      scope: './',
       type: 'classic',
     });
-    console.log('[SW] Blob URL 등록됨:', swReg.scope);
+    console.log('[SW] sw.js 등록됨:', swReg.scope);
 
     // 현재 페이지 URL을 SW에 캐시하도록 요청
     const sw = swReg.active || swReg.installing || swReg.waiting;
