@@ -12,10 +12,9 @@
 <meta name="description" content="매일 감사한 것을 기록하는 감성 노트 앱">
 <meta name="msapplication-TileColor" content="#c17a52">
 
-<!-- Apple Touch Icons (Data URI — 단일 파일 PWA) -->
-<link rel="apple-touch-icon" id="appleTouchIcon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='40' fill='%23f9f5ef'/%3E%3Ctext x='90' y='125' text-anchor='middle' font-size='100'%3E🌿%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-icon" sizes="152x152" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 152 152'%3E%3Crect width='152' height='152' rx='34' fill='%23f9f5ef'/%3E%3Ctext x='76' y='108' text-anchor='middle' font-size='88'%3E🌿%3C/text%3E%3C/svg%3E">
-<link rel="apple-touch-startup-image" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23f9f5ef'/%3E%3Ctext x='256' y='340' text-anchor='middle' font-size='280'%3E🌿%3C/text%3E%3C/svg%3E">
+<!-- Apple Touch Icons -->
+<link rel="apple-touch-icon" id="appleTouchIcon" href="./apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 
 <title>Grateful — 감사노트</title>
 <link rel="manifest" href="./manifest.json">
@@ -4202,13 +4201,25 @@ function attachFeedScrollObserver() {
 function addGratitudeItem() {
   if (state.gratitude.length >= 5) return;
   state.gratitude.push("");
+  // saved는 유지 — 공유 버튼이 사라지지 않게 함
+  // 저장 버튼만 "저장하기"로 복원 (추가 항목이 미저장 상태임을 표시)
+  const prevSaved = saved;
   saved = false;
-  // 카드 내부만 부분 재렌더 (전체 render 없이)
   const el = document.getElementById("mainContent");
   if (el) {
     el.innerHTML = renderWrite();
     el.innerHTML += `<div class="app-footer">Grateful <span>v${APP_VERSION}</span> · ${APP_BUILD}<br>Made with 🌿 for a more thankful day</div>`;
     attachListeners();
+    // 공유 버튼: 이전에 저장된 적 있으면 유지
+    if (prevSaved) {
+      const alreadyShared = sharedToday || getSharedKeys().includes(todayKey());
+      const shareEl = document.getElementById("shareSectionWrap");
+      if (shareEl && !alreadyShared && firebaseReady) {
+        shareEl.innerHTML = `<button class="share-btn" onclick="shareToFeed()">🌿 그룹에 공유하기</button>`;
+      } else if (shareEl && alreadyShared) {
+        shareEl.innerHTML = `<button class="share-btn shared" onclick="showToast('오늘은 이미 공유했어요 ✦')">✦ 오늘 그룹에 공유됨</button>`;
+      }
+    }
     // 새로 추가된 마지막 textarea에 포커스
     const last = document.getElementById(`gtext${state.gratitude.length - 1}`);
     if (last) setTimeout(() => last.focus(), 50);
@@ -4531,36 +4542,8 @@ const _PWA_ICON_512 = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 const _PWA_ICON_MASK = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' fill='%23f9f5ef'/%3E%3Ctext x='256' y='360' text-anchor='middle' font-size='300'%3E🌿%3C/text%3E%3C/svg%3E";
 
 function injectPwaManifest() {
-  const manifest = {
-    name: "Grateful — 감사노트",
-    short_name: "Grateful",
-    description: "매일 감사한 것을 기록하는 감성 노트 앱",
-    start_url: location.pathname,
-    scope: location.pathname.replace(/[^/]*$/, '') || '/',
-    display: "standalone",
-    orientation: "portrait",
-    background_color: "#f9f5ef",
-    theme_color: "#c17a52",
-    lang: "ko",
-    categories: ["lifestyle", "productivity"],
-    icons: [
-      { src: _PWA_ICON_192, sizes: "192x192", type: "image/svg+xml", purpose: "any" },
-      { src: _PWA_ICON_512, sizes: "512x512", type: "image/svg+xml", purpose: "any" },
-      { src: _PWA_ICON_MASK, sizes: "512x512", type: "image/svg+xml", purpose: "maskable" },
-    ],
-    shortcuts: [
-      { name: "오늘 기록", short_name: "기록", description: "오늘의 감사 작성", url: location.pathname + "?tab=write", icons: [{ src: _PWA_ICON_192, sizes: "192x192" }] },
-    ],
-  };
-  const blob = new Blob([JSON.stringify(manifest)], { type: 'application/manifest+json' });
-  const url  = URL.createObjectURL(blob);
-  let link = document.querySelector('link[rel="manifest"]');
-  if (!link) {
-    link = document.createElement('link');
-    link.rel = 'manifest';
-    document.head.appendChild(link);
-  }
-  link.href = url;
+  // 정적 manifest.json 사용 (GitHub Pages PWA 설치 호환)
+  // head의 <link rel="manifest" href="./manifest.json"> 가 이미 존재함
 }
 
 function initPwa() {
@@ -4812,11 +4795,14 @@ self.addEventListener('notificationclick', e => {
 `;
 
   try {
-    swReg = await navigator.serviceWorker.register('./sw.js', {
-      scope: './',
+    const blob = new Blob([swCode], { type: 'application/javascript' });
+    const swBlobUrl = URL.createObjectURL(blob);
+
+    swReg = await navigator.serviceWorker.register(swBlobUrl, {
+      scope: location.pathname.replace(/[^/]*$/, '') || '/',
       type: 'classic',
     });
-    console.log('[SW] sw.js 등록됨:', swReg.scope);
+    console.log('[SW] Blob URL 등록됨:', swReg.scope);
 
     // 현재 페이지 URL을 SW에 캐시하도록 요청
     const sw = swReg.active || swReg.installing || swReg.waiting;
