@@ -11,6 +11,16 @@
 <link rel="manifest" href="/Gratefull/manifest.json">
 <link rel="apple-touch-icon" href="/Gratefull/apple-touch-icon.png">
 <title>Grateful — 감사노트</title>
+<script>
+  // ── 서비스 워커 최우선 등록 ──
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/Gratefull/sw.js', { scope: '/Gratefull/' })
+        .then(reg => console.log('[SW] 등록 성공:', reg.scope))
+        .catch(err => console.error('[SW] 등록 실패:', err));
+    });
+  }
+</script>
 
 <!-- ✅ Firebase 연결 완료: grateful-c4abc -->
 <script>
