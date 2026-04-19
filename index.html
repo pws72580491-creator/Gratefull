@@ -89,6 +89,13 @@ function initFirebase() {
 // Firebase SDK를 순서대로 로드한 뒤 앱 시작
 // DOMContentLoaded 이후에 실행되도록 보장
 window.addEventListener("DOMContentLoaded", () => {
+  // ── SW 최우선 독립 등록 (Firebase와 무관하게 즉시 실행) ──
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/Gratefull/sw.js', { scope: '/Gratefull/' })
+      .then(reg => console.log('[SW] 사전 등록됨:', reg.scope))
+      .catch(err => console.warn('[SW] 사전 등록 실패:', err));
+  }
+
   loadScript("https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js")
     .then(() => loadScript("https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"))
     .then(() => { /* Firebase SDK 로드 완료 */ })
