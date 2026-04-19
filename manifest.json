@@ -2,9 +2,9 @@
   "name": "Grateful — 감사노트",
   "short_name": "Grateful",
   "description": "매일의 감사를 기록하는 아름다운 감사 노트",
-  "id": "/geatefull/",
-  "start_url": "/geatefull/",
-  "scope": "/geatefull/",
+  "id": "/Gratefull/",
+  "start_url": "/Gratefull/",
+  "scope": "/Gratefull/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#f9f5ef",
@@ -13,25 +13,25 @@
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "/geatefull/icon-192.png",
+      "src": "/Gratefull/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/geatefull/icon-maskable.png",
+      "src": "/Gratefull/icon-maskable.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/geatefull/icon-512.png",
+      "src": "/Gratefull/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/geatefull/apple-touch-icon.png",
+      "src": "/Gratefull/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"

@@ -8,8 +8,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Grateful">
 <meta name="theme-color" content="#c17a52">
-<link rel="manifest" href="/geatefull/manifest.json">
-<link rel="apple-touch-icon" href="/geatefull/apple-touch-icon.png">
+<link rel="manifest" href="/Gratefull/manifest.json">
+<link rel="apple-touch-icon" href="/Gratefull/apple-touch-icon.png">
 <title>Grateful — 감사노트</title>
 
 <!-- ✅ Firebase 연결 완료: grateful-c4abc -->
@@ -4525,7 +4525,7 @@ async function initServiceWorker() {
     const swUrl = location.pathname + location.search +
       (location.search ? '&' : '?') + 'grateful-sw-scope';
     // 실제로는 페이지 경로 그대로 등록 (SW 감지 코드가 상단에 있음)
-    swReg = await navigator.serviceWorker.register('/geatefull/sw.js', { scope: '/geatefull/' });
+    swReg = await navigator.serviceWorker.register('/Gratefull/sw.js', { scope: '/Gratefull/' });
     console.log('[SW] 등록됨:', swReg.scope);
 
     // 앱 → SW 메시지: 오늘 기록 여부 응답
