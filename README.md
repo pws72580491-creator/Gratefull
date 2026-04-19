@@ -2,7 +2,7 @@
 
 > 매일의 감사를 기록하는 아름다운 PWA 앱
 
-**배포 URL:** `https://pws72580491-creator.github.io/geatefull`
+**배포 URL:** `https://pws72580491-creator.github.io/Gratefull`
 
 ---
 
