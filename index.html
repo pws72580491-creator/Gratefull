@@ -2039,111 +2039,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
 
-
-  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-     PRAYER NOTE
-  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  .prayer-card { border-color: #a8c5a0; }
-  .prayer-badge {
-    font-size: 10px; font-weight: 600; letter-spacing: 0.3px;
-    background: #e8f5e3; color: #4a8c5c;
-    padding: 2px 8px; border-radius: 20px; border: 1px solid #a8c5a0;
-  }
-  .prayer-item {
-    margin: 10px 0;
-    padding: 10px 12px;
-    background: var(--card-bg, #faf8f4);
-    border: 1px solid #d8e8d4;
-    border-radius: 12px;
-    transition: background 0.4s;
-  }
-  .prayer-item-top {
-    display: flex; align-items: flex-start; gap: 8px;
-  }
-  .prayer-num {
-    min-width: 26px; height: 26px;
-    display: flex; align-items: center; justify-content: center;
-    background: #e8f0e6; color: #4a8c5c;
-    border-radius: 8px; font-size: 12px; font-weight: 600;
-    margin-top: 4px; transition: background 0.3s, color 0.3s;
-  }
-  .prayer-num.answered {
-    background: #4a8c5c; color: #fff;
-  }
-  .prayer-textarea {
-    flex: 1; border: none; background: transparent;
-    font-family: inherit; font-size: 14px;
-    color: var(--brown-dark, #4a3728); resize: none;
-    line-height: 1.5; padding: 4px 0;
-    outline: none;
-  }
-  .prayer-del-btn {
-    background: none; border: none; color: #bbb;
-    font-size: 13px; cursor: pointer; padding: 4px;
-    margin-top: 2px; border-radius: 6px;
-    transition: color 0.2s;
-  }
-  .prayer-del-btn:hover { color: #e07070; }
-  .prayer-answered-btn {
-    margin-top: 8px; width: 100%;
-    background: transparent; border: 1px dashed #a8c5a0;
-    color: #5ba06b; font-size: 12px; font-weight: 500;
-    padding: 5px 10px; border-radius: 8px; cursor: pointer;
-    transition: all 0.25s;
-  }
-  .prayer-answered-btn.active {
-    background: #4a8c5c; border-color: #4a8c5c;
-    color: #fff; font-weight: 600;
-  }
-  .add-prayer-btn {
-    width: 100%; margin-top: 10px;
-    background: transparent; border: 1.5px dashed #a8c5a0;
-    color: #5ba06b; font-size: 13px; font-weight: 500;
-    padding: 9px; border-radius: 12px; cursor: pointer;
-    transition: background 0.2s;
-  }
-  .add-prayer-btn:hover { background: #eef7eb; }
-
-  /* 내기록 — 기도 표시 */
-  .h-prayer-section {
-    margin-top: 12px; padding-top: 12px;
-    border-top: 1px solid var(--border, #e8e0d4);
-  }
-  .h-prayer-label {
-    font-size: 11px; font-weight: 600; color: #5ba06b;
-    letter-spacing: 0.5px; margin-bottom: 8px;
-  }
-  .h-prayer-item {
-    display: flex; align-items: center; gap: 8px;
-    padding: 6px 0; border-bottom: 1px solid #f0ece6;
-    font-size: 13.5px; color: var(--brown-dark, #4a3728);
-  }
-  .h-prayer-item.answered { color: #888; text-decoration: line-through; }
-  .h-prayer-text { flex: 1; }
-  .h-prayer-badge {
-    font-size: 10px; font-weight: 600; white-space: nowrap;
-    background: #4a8c5c; color: #fff;
-    padding: 2px 7px; border-radius: 20px;
-  }
-
-  /* 응답된 기도 모아보기 */
-  .answered-prayer-row {
-    display: flex; align-items: flex-start; gap: 10px;
-    padding: 8px 0; border-bottom: 1px solid var(--border, #e8e0d4);
-  }
-  .answered-prayer-badge {
-    min-width: 22px; height: 22px;
-    display: flex; align-items: center; justify-content: center;
-    background: #4a8c5c; color: #fff;
-    border-radius: 50%; font-size: 11px; font-weight: 700;
-    margin-top: 2px;
-  }
-  .answered-prayer-text {
-    font-size: 13.5px; color: var(--brown-dark, #4a3728); line-height: 1.4;
-  }
-  .answered-prayer-date {
-    font-size: 11px; color: var(--brown-faint, #b8a898); margin-top: 2px;
-  }
   /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
      FEED ADVANCED FILTERS
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -2263,6 +2158,55 @@ window.addEventListener("DOMContentLoaded", () => {
     animation: spin 0.8s linear infinite;
     margin: 0 auto 12px;
   }
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     🙏 기도노트
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  .prayer-hero{background:linear-gradient(135deg,rgba(101,83,147,.15) 0%,rgba(171,130,188,.08) 100%);border:1.5px solid rgba(141,110,177,.2);border-radius:22px;padding:20px 20px 16px;margin-bottom:14px;text-align:center;position:relative;overflow:hidden;}
+  .prayer-hero::before{content:'';position:absolute;top:-30px;right:-20px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(171,130,188,.14) 0%,transparent 70%);}
+  .prayer-hero-emoji{font-size:32px;margin-bottom:6px;display:block;}
+  .prayer-hero-title{font-family:'DM Serif Display',Georgia,serif;font-size:17px;color:var(--ink);font-weight:500;margin-bottom:4px;}
+  .prayer-hero-sub{font-size:12px;color:var(--ink-soft);line-height:1.6;}
+  .prayer-hero-stats{display:flex;justify-content:center;gap:24px;margin-top:12px;}
+  .prayer-stat{text-align:center;}
+  .prayer-stat-num{font-family:'DM Serif Display',serif;font-size:22px;color:rgba(121,93,167,1);font-weight:500;}
+  .prayer-stat-label{font-size:10px;color:var(--ink-faint);margin-top:1px;}
+  .prayer-form-card{background:var(--card-bg);border:1.5px solid var(--card-border);border-radius:20px;padding:18px 16px;margin-bottom:14px;box-shadow:var(--shadow-card);}
+  .prayer-form-label{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:1.6px;font-weight:700;color:var(--ink-faint);text-transform:uppercase;margin-bottom:9px;}
+  .prayer-cat-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+  .prayer-cat-btn{padding:5px 12px;border-radius:20px;border:1.5px solid var(--border);background:var(--surface);color:var(--ink-soft);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
+  .prayer-cat-btn.sel{background:rgba(141,110,177,.15);border-color:rgba(141,110,177,.5);color:rgba(101,83,147,1);}
+  .prayer-cat-btn:active{transform:scale(.93);}
+  .prayer-input{width:100%;border:1.5px solid var(--border);border-radius:14px;background:var(--surface);color:var(--ink);font-family:var(--font-writing);font-size:14.5px;padding:11px 14px;outline:none;margin-bottom:9px;transition:border-color .2s;box-sizing:border-box;-webkit-appearance:none;}
+  .prayer-input:focus{border-color:rgba(141,110,177,.6);}
+  .prayer-textarea{width:100%;border:1.5px solid var(--border);border-radius:14px;background:var(--surface);color:var(--ink);font-family:var(--font-writing);font-size:13.5px;padding:11px 14px;outline:none;resize:none;line-height:1.7;transition:border-color .2s;min-height:72px;box-sizing:border-box;-webkit-appearance:none;}
+  .prayer-textarea:focus{border-color:rgba(141,110,177,.6);}
+  .prayer-add-btn{width:100%;padding:13px;border:none;border-radius:16px;background:linear-gradient(135deg,rgba(101,83,147,.88),rgba(141,110,177,.92));color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.3px;box-shadow:0 4px 16px rgba(101,83,147,.25);transition:all .2s cubic-bezier(.34,1.56,.64,1);}
+  .prayer-add-btn:active{transform:scale(.97);}
+  .prayer-filter-row{display:flex;gap:4px;margin-bottom:12px;background:var(--surface);border-radius:14px;padding:3px;border:1px solid var(--border);}
+  .prayer-filter-btn{flex:1;padding:8px;border:none;border-radius:10px;background:transparent;color:var(--ink-faint);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;}
+  .prayer-filter-btn.active{background:var(--card-bg);color:rgba(101,83,147,1);box-shadow:var(--shadow-sm),0 0 0 1px var(--border);font-weight:700;}
+  .prayer-card{background:var(--card-bg);border:1.5px solid var(--card-border);border-radius:18px;padding:15px 16px;margin-bottom:10px;box-shadow:var(--shadow-card);animation:fadeSlideIn .28s ease both;}
+  .prayer-card.answered{border-color:rgba(94,158,108,.35);background:linear-gradient(135deg,var(--card-bg),rgba(94,158,108,.03));}
+  .prayer-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px;}
+  .prayer-card-cat{font-size:10px;font-weight:700;letter-spacing:.8px;padding:3px 9px;border-radius:10px;background:rgba(141,110,177,.12);color:rgba(101,83,147,1);}
+  .prayer-card.answered .prayer-card-cat{background:rgba(94,158,108,.12);color:var(--green);}
+  .prayer-card-date{font-size:10.5px;color:var(--ink-faint);}
+  .prayer-card-title{font-family:var(--font-writing);font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px;line-height:1.5;}
+  .prayer-card-content{font-family:var(--font-writing);font-size:13px;color:var(--ink-soft);line-height:1.7;margin-bottom:11px;}
+  .prayer-card-footer{display:flex;gap:7px;justify-content:flex-end;align-items:center;}
+  .prayer-answered-btn{padding:6px 13px;border-radius:12px;background:var(--green-bg);border:1.5px solid var(--green-border);color:var(--green);font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:700;cursor:pointer;transition:all .2s;}
+  .prayer-answered-btn:active{transform:scale(.93);}
+  .prayer-del-btn{padding:6px 10px;border-radius:12px;border:1.5px solid var(--border);background:transparent;color:var(--ink-faint);font-family:'DM Sans',sans-serif;font-size:11.5px;cursor:pointer;transition:all .2s;}
+  .prayer-del-btn:active{transform:scale(.93);}
+  .prayer-answered-tag{font-size:11px;color:var(--green);font-weight:700;display:flex;align-items:center;gap:4px;}
+  .prayer-empty{text-align:center;color:var(--ink-faint);font-size:13px;padding:30px 20px;line-height:1.9;}
+  .challenge-compact-bar{background:linear-gradient(135deg,var(--terra),var(--terra-dark));border-radius:14px;padding:13px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;}
+  .challenge-compact-bar:active{transform:scale(.98);}
+  .challenge-compact-label{color:#fff;font-size:13px;font-weight:700;}
+  .challenge-compact-sub{color:rgba(255,255,255,.78);font-size:11px;margin-top:2px;}
+  .challenge-compact-pct{color:#fff;font-family:'DM Serif Display',serif;font-size:22px;font-weight:500;}
+
 </style>
 </head>
 <body>
@@ -2511,8 +2455,8 @@ window.addEventListener("DOMContentLoaded", () => {
   </div>
   <div class="tabs">
     <button class="tab-btn active" onclick="setView('write')">오늘</button>
-    <button class="tab-btn" onclick="setView('history')">내 기록</button>
-    <button class="tab-btn" onclick="setView('challenge')">챌린지</button>
+    <button class="tab-btn" onclick="setView('history')">기록</button>
+    <button class="tab-btn" onclick="setView('prayer')">🙏 기도</button>
     <button class="tab-btn" id="feedTabBtn" onclick="setView('feed')">피드<span class="feed-dot" id="feedDot" style="display:none"></span></button>
   </div>
   <div style="height:6px;display:flex;align-items:center;justify-content:center;margin-top:4px">
@@ -2584,7 +2528,7 @@ const DAY_LABELS = ["일","월","화","수","목","금","토"];
 // 상태
 // ══════════════════════════════════════════
 let currentView = "write";
-let state = { gratitude: [""], mood: null, note: "", prayer: [] }; // prayer: [{text,answered,answeredAt}]
+let state = { gratitude: [""], mood: null, note: "" };
 let saved = false;
 let sharedToday = false;
 let firebaseReady = false;
@@ -2599,6 +2543,10 @@ let histCalYear  = 0;
 let histCalMonth = 0;
 let histEditMode = false;
 let rewindYear = new Date().getFullYear(); // 연간 리와인드 연도
+
+// 🙏 기도노트 상태
+let prayerFilter = "active";  // "active" | "answered"
+let prayerEditId = null;       // 수정 중인 기도 ID
 
 // 오늘 사용할 힌트 세트
 let todayHints = HINT_POOL[new Date().getDay() % HINT_POOL.length];
@@ -2749,7 +2697,6 @@ async function loadHistoryFromCloud() {
           : [""],
         mood: raw.mood ?? null,
         note: raw.note ?? "",
-        prayer: Array.isArray(raw.prayer) ? raw.prayer : [],
       };
       if (state.gratitude.length > 5) state.gratitude = state.gratitude.slice(0, 5);
       saved = true;
@@ -2757,7 +2704,7 @@ async function loadHistoryFromCloud() {
     setSyncStatus("synced");
     updateStreak();
     syncChallengeWithHistory();
-    render(); // 클라우드 동기화 후 항상 재렌더 (공유 버튼 표시)
+    if (currentView === "history" || currentView === "write") render();
 
     // 로컬에만 있는 날은 클라우드에 업로드 (양방향)
     const toUpload = Object.keys(local).filter(k =>
@@ -3370,7 +3317,6 @@ function init() {
         : [""],
       mood: raw.mood ?? null,
       note: raw.note ?? "",
-      prayer: Array.isArray(raw.prayer) ? raw.prayer : [],
     };
     // 최소 1개, 최대 5개 유지
     if (state.gratitude.length === 0) state.gratitude = [""];
@@ -3420,7 +3366,7 @@ function setView(v) {
   document.querySelectorAll(".tab-btn").forEach((b, i) => {
     b.classList.toggle("active",
       (i===0 && v==="write") || (i===1 && v==="history") ||
-      (i===2 && v==="challenge") || (i===3 && v==="feed")
+      (i===2 && v==="prayer") || (i===3 && v==="feed")
     );
   });
   if (v === "feed") {
@@ -3440,7 +3386,7 @@ function render() {
   renderTimer = setTimeout(() => {
       if (currentView === "write")          el.innerHTML = renderWrite();
       else if (currentView === "history")   el.innerHTML = renderHistory();
-      else if (currentView === "challenge") el.innerHTML = renderChallenge();
+      else if (currentView === "prayer")    el.innerHTML = renderPrayer();
       else                                  el.innerHTML = renderFeed();
       // 공통 하단 버전 푸터
       el.innerHTML += `<div class="app-footer">Grateful <span>v${APP_VERSION}</span> · ${APP_BUILD}<br>Made with 🌿 for a more thankful day</div>`;
@@ -3466,7 +3412,7 @@ function render() {
 // ══════════════════════════════════════════
 // 스와이프 탭 전환
 // ══════════════════════════════════════════
-const VIEWS = ["write", "history", "challenge", "feed"];
+const VIEWS = ["write", "history", "prayer", "feed"];
 
 function updateSwipeHints() {
   const idx = VIEWS.indexOf(currentView);
@@ -3627,7 +3573,6 @@ function renderWrite() {
       <div class="card-label">한 줄 메모 <span class="card-label-opt">(선택)</span></div>
       <textarea class="note-textarea" id="noteText" rows="2" placeholder="오늘 하루를 한 줄로...">${escHtml(state.note)}</textarea>
     </div>
-    ${renderPrayerCard()}
     <button class="save-btn ${saved?"saved":""}" id="saveBtn" onclick="doSave()">
       ${saved ? "✓  저장됨" : "저장하기"}
     </button>
@@ -3716,7 +3661,14 @@ function renderHistory() {
   // ── 콘텐츠 ──
   const contentHtml = histMode === "day" ? renderDayDetail(h, selDate) : renderWeekView(h, selDate);
 
-  return transferBanner + statsHtml + renderRewind(h) + calHtml + modeToggle + contentHtml + renderAnsweredPrayers();
+  return transferBanner + statsHtml + renderRewind(h) + calHtml + modeToggle + contentHtml + `
+    <div class="card" style="margin-top:14px">
+      <div class="card-label" style="margin-bottom:12px;display:flex;justify-content:space-between;align-items:center">
+        <span>📅 챌린지 현황</span>
+        <button onclick="setView('prayer')" style="font-size:11px;color:var(--terra);background:none;border:none;cursor:pointer;font-family:inherit;">🙏 기도노트 →</button>
+      </div>
+      ${renderChallengeCompact()}
+    </div>`;
 }
 
 // ── 일별 상세 ──
@@ -3778,15 +3730,6 @@ function renderDayDetail(h, dateKey) {
     `<div class="h-g-item"><span class="h-bullet">✦</span><span class="h-text">${escHtml(g)}</span></div>`
   ).join("");
   const noteRow = e.note ? `<div class="h-note">"${escHtml(e.note)}"</div>` : "";
-  const prayerRows = Array.isArray(e.prayer) && e.prayer.filter(p=>p&&p.text).length > 0
-    ? `<div class="h-prayer-section">
-        <div class="h-prayer-label">🙏 기도 제목</div>
-        ${e.prayer.filter(p=>p&&p.text).map(p=>`
-          <div class="h-prayer-item ${p.answered?'answered':''}">
-            <span class="h-prayer-text">${escHtml(p.text)}</span>
-            ${p.answered ? `<span class="h-prayer-badge">✓ 응답됨</span>` : ''}
-          </div>`).join('')}
-      </div>` : '';
 
   return `
     <div class="card">
@@ -3797,7 +3740,7 @@ function renderDayDetail(h, dateKey) {
           <button class="edit-btn" onclick="startHistEdit('${dateKey}')">✏️ 수정</button>
         </div>
       </div>
-      ${gRows}${noteRow}${prayerRows}
+      ${gRows}${noteRow}
     </div>`;
 }
 
@@ -4288,7 +4231,6 @@ function attachListeners() {
   const noteEl = document.getElementById("noteText");
   if (noteEl) noteEl.addEventListener("input", () => {
     state.note = noteEl.value.trim(); saved = false;
-    renderPrayerAnsweredBadge();
     const saveBtn = document.getElementById("saveBtn");
     if (saveBtn && saveBtn.classList.contains("saved")) {
       saveBtn.textContent = "저장하기"; saveBtn.classList.remove("saved");
@@ -4313,154 +4255,6 @@ function attachFeedScrollObserver() {
   requestAnimationFrame(() => {
     if (sentinel.isConnected) _feedObserver.observe(sentinel);
   });
-}
-
-
-// ══════════════════════════════════════════
-// 기도노트 함수들
-// ══════════════════════════════════════════
-
-function renderPrayerCard() {
-  const prayers = state.prayer || [];
-  const items = prayers.map((p, i) => `
-    <div class="prayer-item" id="prayerItem${i}">
-      <div class="prayer-item-top">
-        <div class="prayer-num ${p.answered?'answered':''}">${i+1}</div>
-        <textarea class="prayer-textarea" id="prayer_text_${i}" rows="2"
-          placeholder="기도 제목을 입력해요..."
-          onchange="onPrayerTextChange(${i})"
-          oninput="onPrayerTextChange(${i})">${escHtml(p.text||'')}</textarea>
-        <button class="prayer-del-btn" onclick="removePrayerItem(${i})" title="삭제">✕</button>
-      </div>
-      <button class="prayer-answered-btn ${p.answered?'active':''}"
-        onclick="togglePrayerAnswered(${i})">
-        ${p.answered ? '✓ 응답됨 🙌' : '응답됨으로 표시'}
-      </button>
-    </div>`).join('');
-
-  const answeredCount = prayers.filter(p=>p.answered).length;
-  const totalCount = prayers.filter(p=>p&&p.text).length;
-  const badge = totalCount > 0
-    ? `<span class="prayer-badge" id="prayerBadge">${answeredCount}/${totalCount} 응답</span>` : '';
-
-  return `
-    <div class="card prayer-card">
-      <div class="card-label" style="display:flex;align-items:center;gap:8px">
-        🙏 기도 제목 <span class="card-label-opt">(선택)</span>
-        ${badge}
-      </div>
-      <div id="prayerList">${items}</div>
-      ${prayers.length < 10 ? `<button class="add-prayer-btn" onclick="addPrayerItem()">＋ 기도 제목 추가</button>` : ''}
-    </div>`;
-}
-
-function renderPrayerAnsweredBadge() {
-  const prayers = state.prayer || [];
-  const totalCount = prayers.filter(p=>p&&p.text).length;
-  const answeredCount = prayers.filter(p=>p.answered).length;
-  const badge = document.getElementById('prayerBadge');
-  if (badge && totalCount > 0) badge.textContent = `${answeredCount}/${totalCount} 응답`;
-}
-
-function onPrayerTextChange(i) {
-  const ta = document.getElementById(`prayer_text_${i}`);
-  if (ta && state.prayer[i] !== undefined) {
-    state.prayer[i] = { ...state.prayer[i], text: ta.value };
-  }
-  saved = false;
-  const saveBtn = document.getElementById('saveBtn');
-  if (saveBtn) { saveBtn.textContent = '저장하기'; saveBtn.classList.remove('saved'); }
-}
-
-function addPrayerItem() {
-  if (!state.prayer) state.prayer = [];
-  if (state.prayer.length >= 10) return;
-  state.prayer.push({ text: '', answered: false, answeredAt: null });
-  saved = false;
-  const el = document.getElementById('mainContent');
-  if (el) {
-    el.innerHTML = renderWrite();
-    el.innerHTML += `<div class="app-footer">Grateful <span>v${APP_VERSION}</span> · ${APP_BUILD}<br>Made with 🌿 for a more thankful day</div>`;
-    attachListeners();
-    const last = document.getElementById(`prayer_text_${state.prayer.length - 1}`);
-    if (last) setTimeout(() => last.focus(), 50);
-  }
-}
-
-function removePrayerItem(i) {
-  state.prayer.splice(i, 1);
-  saved = false;
-  const el = document.getElementById('mainContent');
-  if (el) {
-    el.innerHTML = renderWrite();
-    el.innerHTML += `<div class="app-footer">Grateful <span>v${APP_VERSION}</span> · ${APP_BUILD}<br>Made with 🌿 for a more thankful day</div>`;
-    attachListeners();
-  }
-}
-
-function togglePrayerAnswered(i) {
-  if (!state.prayer[i]) return;
-  const wasAnswered = state.prayer[i].answered;
-  state.prayer[i] = {
-    ...state.prayer[i],
-    answered: !wasAnswered,
-    answeredAt: !wasAnswered ? Date.now() : null,
-  };
-  // 즉시 저장 (응답됨은 중요한 순간이라 바로 저장)
-  const h = getHistory();
-  const today = todayKey();
-  if (h[today]) {
-    h[today].prayer = state.prayer;
-    h[today].updatedAt = Date.now();
-    saveHistory(h);
-    syncDayToCloud(today, h[today]);
-  }
-  // UI만 갱신
-  const item = document.getElementById(`prayerItem${i}`);
-  if (item) {
-    const numEl = item.querySelector('.prayer-num');
-    const btn = item.querySelector('.prayer-answered-btn');
-    if (numEl) numEl.classList.toggle('answered', !wasAnswered);
-    if (btn) {
-      btn.classList.toggle('active', !wasAnswered);
-      btn.textContent = !wasAnswered ? '✓ 응답됨 🙌' : '응답됨으로 표시';
-    }
-    if (!wasAnswered) {
-      item.style.transition = 'background 0.4s';
-      item.style.background = 'rgba(91,160,107,0.08)';
-      setTimeout(() => { item.style.background = ''; }, 800);
-      showToast('기도가 응답됐어요! 🙌');
-    }
-  }
-  renderPrayerAnsweredBadge();
-}
-
-// 응답된 기도 모아보기 (내기록 탭 하단)
-function renderAnsweredPrayers() {
-  const h = getHistory();
-  const answered = [];
-  Object.entries(h).forEach(([date, entry]) => {
-    if (Array.isArray(entry.prayer)) {
-      entry.prayer.filter(p=>p&&p.text&&p.answered).forEach(p => {
-        answered.push({ date, text: p.text, answeredAt: p.answeredAt });
-      });
-    }
-  });
-  if (answered.length === 0) return '';
-  answered.sort((a,b) => (b.answeredAt||0) - (a.answeredAt||0));
-  const rows = answered.slice(0, 20).map(p => `
-    <div class="answered-prayer-row">
-      <span class="answered-prayer-badge">✓</span>
-      <div>
-        <div class="answered-prayer-text">${escHtml(p.text)}</div>
-        <div class="answered-prayer-date">${formatDate(p.date)}</div>
-      </div>
-    </div>`).join('');
-  return `
-    <div class="card" style="margin-top:16px">
-      <div class="card-label">🙌 응답된 기도 <span class="card-label-opt">(${answered.length}개)</span></div>
-      ${rows}
-    </div>`;
 }
 
 // 감사 항목 추가
@@ -4512,19 +4306,12 @@ function doSave() {
     if (ta) state.gratitude[i] = ta.value;
   });
 
-  // 기도 항목 DOM 동기화
-  state.prayer.forEach((_, i) => {
-    const ta = document.getElementById(`prayer_text_${i}`);
-    if (ta) state.prayer[i] = { ...state.prayer[i], text: ta.value.trim() };
-  });
-  state.prayer = state.prayer.filter(p => p && p.text);
-
   // 빈 항목 정리 (마지막 빈 칸 제외하고 중간 빈 칸만 정리)
   const trimmed = state.gratitude.filter((g, i, arr) => g || i === arr.length - 1);
   if (trimmed.length === 0) trimmed.push("");
 
   const h = getHistory();
-  h[todayKey()] = { gratitude: trimmed, mood: state.mood, note: state.note, prayer: state.prayer, updatedAt: Date.now() };
+  h[todayKey()] = { gratitude: trimmed, mood: state.mood, note: state.note, updatedAt: Date.now() };
   saveHistory(h);
   state.gratitude = trimmed;
   saved = true;
@@ -4556,12 +4343,16 @@ function doSave() {
     shareEl.id = "shareSectionWrap";
     btn.parentNode.insertBefore(shareEl, btn.nextSibling);
   }
-  if (firebaseReady && shareEl) {
-    shareEl.innerHTML = `
-      <button class="share-btn ${alreadyShared?"shared":""}"
-        onclick="${alreadyShared?"showToast('오늘은 이미 공유했어요 ✦')":"shareToFeed()"}">
-        ${alreadyShared ? "✦ 오늘 그룹에 공유됨" : "🌿 그룹에 공유하기"}
-      </button>`;
+  // ✅ 버그 수정: firebaseReady와 무관하게 공유 버튼 항상 렌더
+  // (GitHub Pages에서 Firebase가 늦게 연결될 때도 버튼이 보이도록)
+  if (shareEl) {
+    if (alreadyShared) {
+      shareEl.innerHTML = `<button class="share-btn shared" onclick="showToast('오늘은 이미 공유했어요 ✦')">✦ 오늘 그룹에 공유됨</button>`;
+    } else if (!firebaseReady) {
+      shareEl.innerHTML = `<button class="share-btn" style="opacity:0.55;cursor:default" onclick="showToast('Firebase 연결 중이에요. 잠시 후 다시 시도해주세요 🌿')">🌿 그룹에 공유하기</button>`;
+    } else {
+      shareEl.innerHTML = `<button class="share-btn" onclick="shareToFeed()">🌿 그룹에 공유하기</button>`;
+    }
   }
 }
 
@@ -5682,6 +5473,7 @@ function exportData() {
     theme:     localStorage.getItem("grateful-theme")     || "",
     font:      localStorage.getItem("grateful-font")      || "default",
     pattern:   localStorage.getItem("grateful-pattern")   || "none",
+    prayer:    localStorage.getItem("grateful-prayer")    || "{}",
   };
 
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
@@ -5767,6 +5559,15 @@ function importData() {
         localStorage.setItem("grateful-pattern", data.pattern);
         applyPattern(data.pattern);
       }
+      // 기도노트 복원
+      if (data.prayer) {
+        try {
+          const existingPrayer = JSON.parse(localStorage.getItem("grateful-prayer") || "{}");
+          const importedPrayer = JSON.parse(data.prayer);
+          const mergedPrayer = { ...importedPrayer, ...existingPrayer };
+          localStorage.setItem("grateful-prayer", JSON.stringify(mergedPrayer));
+        } catch(e) { /* 무시 */ }
+      }
       // ✅ 수정: 공유 날짜 키도 병합 복원
       if (data.shared) {
         try {
@@ -5817,6 +5618,201 @@ function escHtml(str) {
   return String(str)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;").replace(/'/g,"&#039;");
+}
+
+
+// ══════════════════════════════════════════
+// 🙏 기도노트 — 데이터
+// ══════════════════════════════════════════
+const PRAYER_CATS = ["개인","가족","교회","감사","중보기도"];
+
+function getPrayers() {
+  try { return JSON.parse(localStorage.getItem("grateful-prayer") || "{}"); } catch { return {}; }
+}
+function savePrayers(p) { localStorage.setItem("grateful-prayer", JSON.stringify(p)); }
+
+function genPrayerId() {
+  return "p" + Date.now() + Math.random().toString(36).slice(2,6);
+}
+
+function addPrayer() {
+  const titleEl   = document.getElementById("prayerTitle");
+  const contentEl = document.getElementById("prayerContent");
+  const title   = (titleEl?.value || "").trim();
+  const content = (contentEl?.value || "").trim();
+  if (!title) { showToast("기도 제목을 입력해주세요 🙏"); return; }
+
+  // 선택된 카테고리
+  const catBtns = document.querySelectorAll(".prayer-cat-btn");
+  let cat = "개인";
+  catBtns.forEach(b => { if (b.classList.contains("sel")) cat = b.dataset.cat; });
+
+  const prayers = getPrayers();
+  const id = genPrayerId();
+  prayers[id] = { id, title, content, category: cat,
+                  answered: false, answeredAt: null,
+                  date: todayKey(), createdAt: Date.now() };
+  savePrayers(prayers);
+  if (titleEl) titleEl.value = "";
+  if (contentEl) contentEl.value = "";
+  // 카테고리 기본으로 리셋
+  catBtns.forEach(b => { b.classList.toggle("sel", b.dataset.cat === "개인"); });
+  showToast("기도 제목을 기록했어요 🙏");
+  render();
+}
+
+function markAnswered(id) {
+  const prayers = getPrayers();
+  if (!prayers[id]) return;
+  prayers[id].answered = true;
+  prayers[id].answeredAt = Date.now();
+  savePrayers(prayers);
+  showToast("✅ 응답받은 기도로 표시했어요!");
+  render();
+}
+
+function deletePrayer(id) {
+  const prayers = getPrayers();
+  if (!prayers[id]) return;
+  if (!confirm("이 기도 기록을 삭제할까요?")) return;
+  delete prayers[id];
+  savePrayers(prayers);
+  showToast("삭제했어요.");
+  render();
+}
+
+function setPrayerFilter(f) {
+  prayerFilter = f;
+  render();
+}
+
+function selectPrayerCat(cat) {
+  document.querySelectorAll(".prayer-cat-btn").forEach(b => {
+    b.classList.toggle("sel", b.dataset.cat === cat);
+  });
+}
+
+// ── 챌린지 컴팩트 (기록 탭용) ──
+function renderChallengeCompact() {
+  const s = getChallengeState();
+  const stage = getCurrentStage(s);
+  const checkins = s.checkins || [];
+  const pct = Math.round((checkins.length / stage.days) * 100);
+  const isDoneToday = checkins.includes(todayKey());
+  return `
+    <div class="challenge-compact-bar" onclick="showChallengeModal()">
+      <div>
+        <div class="challenge-compact-label">${stage.icon} ${stage.name}</div>
+        <div class="challenge-compact-sub">${isDoneToday?"✓ 오늘 체크 완료!":checkins.length+"/"+stage.days+"일 완료"}</div>
+      </div>
+      <div class="challenge-compact-pct">${pct}%</div>
+    </div>`;
+}
+
+// 챌린지 상세 모달 (간단)
+function showChallengeModal() {
+  // 현재는 챌린지 풀 뷰를 별도 오버레이로 보여줌
+  // 기존 renderChallenge()를 활용
+  const overlay = document.createElement("div");
+  overlay.id = "challengeOverlay";
+  overlay.style.cssText = "position:fixed;inset:0;z-index:200;background:var(--overlay-bg);display:flex;flex-direction:column;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:max(20px,env(safe-area-inset-top)) 0 40px;";
+  overlay.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:0 20px 14px;position:sticky;top:0;background:var(--header-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:1">
+      <div style="font-family:'DM Serif Display',serif;font-size:17px;color:var(--ink)">📅 챌린지</div>
+      <button onclick="document.getElementById('challengeOverlay').remove()" style="background:var(--surface);border:1.5px solid var(--border);border-radius:50%;width:36px;height:36px;font-size:18px;cursor:pointer;color:var(--ink-soft);">✕</button>
+    </div>
+    <div style="padding:16px 16px 0">${renderChallenge()}</div>`;
+  document.body.appendChild(overlay);
+}
+
+// ══════════════════════════════════════════
+// 🙏 기도노트 — 렌더
+// ══════════════════════════════════════════
+function renderPrayer() {
+  const prayers = getPrayers();
+  const all = Object.values(prayers).sort((a,b) => b.createdAt - a.createdAt);
+  const active   = all.filter(p => !p.answered);
+  const answered = all.filter(p => p.answered);
+  const display  = prayerFilter === "answered" ? answered : active;
+
+  const stats = `
+    <div class="prayer-hero">
+      <span class="prayer-hero-emoji">🙏</span>
+      <div class="prayer-hero-title">기도노트</div>
+      <div class="prayer-hero-sub">하나님께 올려드리는<br>기도 제목을 기록해요</div>
+      <div class="prayer-hero-stats">
+        <div class="prayer-stat">
+          <div class="prayer-stat-num">${active.length}</div>
+          <div class="prayer-stat-label">기도 중</div>
+        </div>
+        <div class="prayer-stat">
+          <div class="prayer-stat-num">${answered.length}</div>
+          <div class="prayer-stat-label">응답받음</div>
+        </div>
+        <div class="prayer-stat">
+          <div class="prayer-stat-num">${all.length}</div>
+          <div class="prayer-stat-label">전체</div>
+        </div>
+      </div>
+    </div>`;
+
+  // 입력 폼
+  const form = `
+    <div class="prayer-form-card">
+      <div class="prayer-form-label">새 기도 제목</div>
+      <div class="prayer-cat-row">
+        ${PRAYER_CATS.map(c =>
+          '<button class="prayer-cat-btn ' + (c==="개인"?"sel":"") + '" data-cat="' + c + '" onclick="selectPrayerCat(\'' + c + '\')">' + c + '</button>'
+        ).join("")}
+      </div>
+      <input class="prayer-input" id="prayerTitle" type="text" placeholder="기도 제목을 적어요" maxlength="60" />
+      <textarea class="prayer-textarea" id="prayerContent" rows="3" placeholder="구체적인 기도 내용 (선택)"></textarea>
+      <button class="prayer-add-btn" onclick="addPrayer()">🙏 기도 제목 올리기</button>
+    </div>`;
+
+  // 필터 탭
+  const filterRow = `
+    <div class="prayer-filter-row">
+      <button class="prayer-filter-btn ${prayerFilter==="active"?"active":""}" onclick="setPrayerFilter('active')">🙏 기도 중 (${active.length})</button>
+      <button class="prayer-filter-btn ${prayerFilter==="answered"?"active":""}" onclick="setPrayerFilter('answered')">✅ 응답받음 (${answered.length})</button>
+    </div>`;
+
+  // 카드 목록
+  let cards = "";
+  if (display.length === 0) {
+    cards = `<div class="prayer-empty">
+      ${prayerFilter === "answered"
+        ? "아직 응답받은 기도가 없어요.<br>기도하고 응답받으면 여기 표시돼요 🌿"
+        : "등록된 기도 제목이 없어요.<br>위에서 기도 제목을 적어 올려보세요 🙏"}
+    </div>`;
+  } else {
+    cards = display.map(p => {
+      const dateStr = formatDateShort(p.date);
+      const contentHtml = p.content
+        ? `<div class="prayer-card-content">${escHtml(p.content)}</div>` : "";
+      const footer = p.answered
+        ? `<div class="prayer-card-footer">
+            <span class="prayer-answered-tag">✅ 응답받음 · ${p.answeredAt ? formatDateShort(localDateStr(new Date(p.answeredAt))) : ""}</span>
+            <button class="prayer-del-btn" onclick="deletePrayer('${p.id}')">삭제</button>
+          </div>`
+        : `<div class="prayer-card-footer">
+            <button class="prayer-answered-btn" onclick="markAnswered('${p.id}')">✅ 응답됨</button>
+            <button class="prayer-del-btn" onclick="deletePrayer('${p.id}')">삭제</button>
+          </div>`;
+      return `
+        <div class="prayer-card ${p.answered?"answered":""}">
+          <div class="prayer-card-top">
+            <span class="prayer-card-cat">${escHtml(p.category)}</span>
+            <span class="prayer-card-date">${dateStr}</span>
+          </div>
+          <div class="prayer-card-title">${escHtml(p.title)}</div>
+          ${contentHtml}
+          ${footer}
+        </div>`;
+    }).join("");
+  }
+
+  return stats + form + filterRow + cards;
 }
 
 // init()은 Firebase SDK 로드 완료 후 자동 호출됨 (head의 DOMContentLoaded 참고)
