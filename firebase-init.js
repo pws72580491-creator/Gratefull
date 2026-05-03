@@ -59,8 +59,12 @@ function initFirebase() {
     }
     feedRef = db.ref("grateful-feed");
     // 내 기록 ref — 닉네임이 있으면 바로 연결
-    const _nick = getNickname();
-    if (_nick) userRef = db.ref(`grateful-users/${encodeNick(_nick)}/history`);
+    const _nick = getNickname ? getNickname() : (localStorage.getItem("grateful-nickname") || "");
+    if (_nick) {
+      // encodeNick이 app.js에 있으므로 직접 인라인 처리
+      const _enc = _nick.replace(/[.#$[\]\/]/g, "_").trim();
+      if (_enc) userRef = db.ref(`grateful-users/${_enc}/history`);
+    }
     return true;
   } catch(e) {
     console.error("Firebase 초기화 실패:", e);
